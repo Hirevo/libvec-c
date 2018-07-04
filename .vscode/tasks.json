@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build library",
+            "type": "shell",
+            "command": "make re",
+            "problemMatcher": "$gcc",
+            "group": "build"
+        },
+        {
+            "label": "Build tests",
+            "type": "shell",
+            "command": "make re --no-print-directory -C tests",
+            "problemMatcher": "$gcc",
+            "group": "build"
+        }
+    ]
+}
