@@ -29,10 +29,12 @@ FILES		=	lvec_new			\
 			lvec_pop_back			\
 			lvec_insert			\
 			lvec_remove			\
+			lvec_map			\
 			lvec_filter			\
 			lvec_reduce			\
 			lvec_for_each			\
 			lvec_sort			\
+			lvec_concat			\
 			lvec_reverse			\
 			lvec_index_of			\
 			lvec_last_index_of		\

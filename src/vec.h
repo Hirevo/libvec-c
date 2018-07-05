@@ -57,6 +57,7 @@ void *lvec_pop_front(vec_t *this);
 bool lvec_insert(vec_t *this, size_t idx, void *elem);
 void *lvec_remove(vec_t *this, size_t idx);
 vec_t *lvec_reverse(vec_t *this);
+vec_t *lvec_concat(vec_t *this, vec_t *other);
 bool lvec_reserve(vec_t *this, size_t capacity);
 void lvec_shrink_to_fit(vec_t *this);
 
@@ -81,6 +82,8 @@ void *lvec_find_last(vec_t *this,
 /*
 ** Iterate over items
 */
+void lvec_map(vec_t *this,
+	void *(*func)(void *context, void *elem, size_t idx), void *context);
 vec_t *lvec_filter(vec_t *this,
 	bool (*predicate)(void *context, void *elem, size_t idx),
 	void *context);

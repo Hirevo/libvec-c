@@ -14,11 +14,9 @@ bool lvec_reserve(vec_t *this, size_t capacity)
 
 	if (this == 0 || capacity <= this->capacity)
 		return (false);
-	arr = calloc(capacity, sizeof(void *));
+	arr = realloc(this->arr, capacity * sizeof(void *));
 	if (arr == 0)
 		return (false);
-	memcpy(arr, this->arr, this->size * sizeof(void *));
-	free(this->arr);
 	this->arr = arr;
 	this->capacity = capacity;
 	return (true);
