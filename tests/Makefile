@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-CC		=	gcc
+CC		=	clang
 
 BINDIR		=	bin
 SRCDIR		=	src
