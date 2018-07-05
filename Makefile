@@ -40,6 +40,7 @@ FILES		=	lvec_new			\
 			lvec_find_last_index		\
 			lvec_find			\
 			lvec_find_last			\
+			lvec_reserve			\
 			lvec_shrink_to_fit		\
 			internal_lvec_grow
 

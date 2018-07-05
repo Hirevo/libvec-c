@@ -5,7 +5,6 @@
 ** internal_lvec_grow
 */
 
-#include <string.h>
 #include "internal_vec.h"
 
 static size_t compute_capacity(size_t capacity)
@@ -22,15 +21,7 @@ static size_t compute_capacity(size_t capacity)
 
 vec_t *internal_lvec_grow(vec_t *this, size_t count)
 {
-	size_t total_size = this->size + count;
-	size_t capacity = compute_capacity(total_size);
-	void **arr = calloc(capacity, sizeof(void *));
+	bool ret = lvec_reserve(this, compute_capacity(this->size + count));
 
-	if (arr == 0)
-		return (0);
-	memcpy(arr, this->arr, this->size * sizeof(void *));
-	free(this->arr);
-	this->arr = arr;
-	this->capacity = capacity;
-	return (this);
+	return (ret ? this : 0);
 }

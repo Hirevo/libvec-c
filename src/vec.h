@@ -57,6 +57,7 @@ void *lvec_pop_front(vec_t *this);
 bool lvec_insert(vec_t *this, size_t idx, void *elem);
 void *lvec_remove(vec_t *this, size_t idx);
 vec_t *lvec_reverse(vec_t *this);
+bool lvec_reserve(vec_t *this, size_t capacity);
 void lvec_shrink_to_fit(vec_t *this);
 
 /*
