@@ -20,7 +20,7 @@ void debug_vec(char *name, vec_t *v)
 	printf("]} => %s\n", name);
 }
 
-int main()
+int main(void)
 {
 	vec_t *v = lvec_with_capacity(8);
 	vec_t *c;
