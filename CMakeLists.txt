@@ -27,6 +27,9 @@ add_library(vec STATIC
     src/lvec_reduce.c
     src/lvec_for_each.c
     src/lvec_sort.c
+    src/lvec_every.c
+    src/lvec_any.c
+    src/lvec_none.c
     src/lvec_concat.c
     src/lvec_reverse.c
     src/lvec_index_of.c

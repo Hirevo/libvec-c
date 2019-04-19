@@ -14,9 +14,9 @@
 #include <unistd.h>
 
 typedef struct vec_s {
-	size_t size;
-	size_t capacity;
-	void **arr;
+    size_t size;
+    size_t capacity;
+    void **arr;
 } vec_t;
 
 /*
@@ -67,30 +67,35 @@ void lvec_shrink_to_fit(vec_t *this);
 ssize_t lvec_index_of(vec_t *this, void *elem);
 ssize_t lvec_last_index_of(vec_t *this, void *elem);
 ssize_t lvec_find_index(vec_t *this,
-	bool (*predicate)(void *context, void *elem, size_t idx),
-	void *context);
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
 ssize_t lvec_find_last_index(vec_t *this,
-	bool (*predicate)(void *context, void *elem, size_t idx),
-	void *context);
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
 void *lvec_find(vec_t *this,
-	bool (*predicate)(void *context, void *elem, size_t idx),
-	void *context);
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
 void *lvec_find_last(vec_t *this,
-	bool (*predicate)(void *context, void *elem, size_t idx),
-	void *context);
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
 
 /*
 ** Iterate over items
 */
 void lvec_map(vec_t *this,
-	void *(*func)(void *context, void *elem, size_t idx), void *context);
+    void *(*func)(void *context, void *elem, size_t idx), void *context);
 vec_t *lvec_filter(vec_t *this,
-	bool (*predicate)(void *context, void *elem, size_t idx),
-	void *context);
-vec_t *lvec_sort(vec_t *this,
-	int (*predicate)(void *a, size_t idx1, void *b, size_t idx2));
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
+vec_t *lvec_sort(
+    vec_t *this, int (*predicate)(void *a, size_t idx1, void *b, size_t idx2));
 void lvec_for_each(vec_t *this,
-	void (*func)(void *context, void *elem, size_t idx), void *context);
+    void (*func)(void *context, void *elem, size_t idx), void *context);
 void *lvec_reduce(vec_t *this,
-	void *(*func)(void *context, void *acc, void *elem, size_t idx),
-	void *context, void *acc);
+    void *(*func)(void *context, void *acc, void *elem, size_t idx),
+    void *context, void *acc);
+
+/*
+** Predicate validation
+*/
+bool lvec_every(vec_t *this,
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
+bool lvec_any(vec_t *this,
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
+bool lvec_none(vec_t *this,
+    bool (*predicate)(void *context, void *elem, size_t idx), void *context);
