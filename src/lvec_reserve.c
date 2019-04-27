@@ -10,14 +10,14 @@
 
 bool lvec_reserve(vec_t *this, size_t capacity)
 {
-	void **arr;
+    void **arr;
 
-	if (this == 0 || capacity <= this->capacity)
-		return (false);
-	arr = realloc(this->arr, capacity * sizeof(void *));
-	if (arr == 0)
-		return (false);
-	this->arr = arr;
-	this->capacity = capacity;
-	return (true);
+    if (this == 0 || capacity <= this->capacity)
+        return (false);
+    arr = realloc(this->arr, capacity * sizeof(void *));
+    if (arr == 0)
+        return (false);
+    this->arr = arr;
+    this->capacity = capacity;
+    return (true);
 }

@@ -11,13 +11,13 @@
 
 void *lvec_remove(vec_t *this, size_t idx)
 {
-	void *item;
+    void *item;
 
-	if (this == 0 || this->size < idx)
-		return (0);
-	item = this->arr[idx];
-	this->size -= 1;
-	memmove(this->arr + idx, this->arr + idx + 1,
-		(this->size - idx) * sizeof(void *));
-	return (item);
+    if (this == 0 || this->size < idx)
+        return (0);
+    item = this->arr[idx];
+    memmove(this->arr + idx, this->arr + idx + 1,
+        (this->size - idx) * sizeof(void *));
+    this->size -= 1;
+    return (item);
 }

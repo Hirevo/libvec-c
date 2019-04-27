@@ -9,5 +9,5 @@
 
 void *lvec_back(vec_t *this)
 {
-	return ((this && this->size) ? this->arr[this->size - 1] : 0);
+    return ((this && this->size) ? this->arr[this->size - 1] : 0);
 }

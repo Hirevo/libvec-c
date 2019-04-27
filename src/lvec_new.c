@@ -9,5 +9,5 @@
 
 vec_t *lvec_new(void)
 {
-	return (calloc(1, sizeof(vec_t)));
+    return (calloc(1, sizeof(vec_t)));
 }

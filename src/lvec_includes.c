@@ -9,5 +9,5 @@
 
 bool lvec_includes(vec_t *this, void *elem)
 {
-	return (this ? (lvec_index_of(this, elem) != -1) : false);
+    return (this ? (lvec_index_of(this, elem) != -1) : false);
 }

@@ -9,8 +9,8 @@
 
 void lvec_drop(vec_t *this)
 {
-	if (this == 0)
-		return;
-	free(this->arr);
-	free(this);
+    if (this == 0)
+        return;
+    free(this->arr);
+    free(this);
 }

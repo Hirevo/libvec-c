@@ -9,5 +9,5 @@
 
 size_t lvec_capacity(vec_t *this)
 {
-	return ((this != 0) ? this->capacity : 0);
+    return ((this != 0) ? this->capacity : 0);
 }

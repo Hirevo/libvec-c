@@ -12,8 +12,9 @@ bool lvec_every(vec_t *this,
 {
     if (this == 0)
         return (false);
-    for (size_t idx = 0; idx < this->size; idx++)
+    for (size_t idx = 0; idx < this->size; idx++) {
         if (predicate(context, this->arr[idx], idx) == false)
             return (false);
+    }
     return (true);
 }

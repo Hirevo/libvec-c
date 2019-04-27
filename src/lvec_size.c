@@ -9,5 +9,5 @@
 
 size_t lvec_size(vec_t *this)
 {
-	return ((this != 0) ? this->size : 0);
+    return ((this != 0) ? this->size : 0);
 }

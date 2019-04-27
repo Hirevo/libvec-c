@@ -9,5 +9,5 @@
 
 void *lvec_front(vec_t *this)
 {
-	return ((this && this->size) ? this->arr[0] : 0);
+    return ((this && this->size) ? this->arr[0] : 0);
 }
