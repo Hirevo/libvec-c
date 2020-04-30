@@ -15,5 +15,6 @@ void *lvec_pop_back(vec_t *this)
     if (this == 0 || this->size == 0)
         return (0);
     this->size -= 1;
+    this->arr[this->size] = NULL;
     return (item);
 }

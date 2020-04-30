@@ -19,5 +19,6 @@ void *lvec_remove(vec_t *this, size_t idx)
     memmove(this->arr + idx, this->arr + idx + 1,
         (this->size - idx) * sizeof(void *));
     this->size -= 1;
+    this->arr[this->size] = NULL;
     return (item);
 }

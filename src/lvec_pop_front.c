@@ -17,5 +17,6 @@ void *lvec_pop_front(vec_t *this)
         return (0);
     this->size -= 1;
     memmove(this->arr, this->arr + 1, this->size * sizeof(void *));
+    this->arr[this->size] = NULL;
     return (item);
 }
